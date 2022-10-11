@@ -14,8 +14,12 @@ function checkNumber() {
     message.textContent = "🎉 Correct number!";
   } else if (guess > secretNumber) {
     message.textContent = "📈 Too high";
+    score = score - 1;
+    document.querySelector(".score").textContent = score;
   } else if (guess < secretNumber) {
     message.textContent = "📉 Too low";
+    score = score - 1;
+    document.querySelector(".score").textContent = score;
   }
 }
 
