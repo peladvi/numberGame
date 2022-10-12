@@ -36,3 +36,5 @@ function playAgain() {
   document.querySelector(".number").textContent = "?";
 }
 document.querySelector(".again").addEventListener("click", playAgain);
+
+// highscore implementation required
