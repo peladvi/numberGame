@@ -3,6 +3,7 @@
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let message = document.querySelector(".message");
+let highscore = 0;
 
 function checkNumber() {
   const guess = Number(document.querySelector(".guess").value);
@@ -13,6 +14,11 @@ function checkNumber() {
     message.textContent = "🎉 Correct number!";
     document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#acc6aa";
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   } else if (guess !== secretNumber) {
     if (score > 1) {
       message.textContent = guess > secretNumber ? "📈 Too high" : "📉 Too low";
