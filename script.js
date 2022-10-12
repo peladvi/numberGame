@@ -33,8 +33,15 @@ function checkNumber() {
     }
   }
 }
-
 let checkButton = document.querySelector(".check");
 checkButton.addEventListener("click", checkNumber);
 
-// #acc6aa;
+function playAgain() {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector(".message").textContent = "🤯Start guessing...";
+  document.querySelector("body").style.backgroundColor = "black";
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".number").textContent = "?";
+}
+document.querySelector(".again").addEventListener("click", playAgain);
