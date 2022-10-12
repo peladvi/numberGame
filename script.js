@@ -13,27 +13,18 @@ function checkNumber() {
     message.textContent = "🎉 Correct number!";
     document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#acc6aa";
-  } else if (guess > secretNumber) {
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      message.textContent = "📈 Too high";
+      message.textContent = guess > secretNumber ? "📈 Too high" : "📉 Too low";
       score = score - 1;
       document.querySelector(".score").textContent = score;
     } else {
       message.textContent = "You lost the game";
       document.querySelector(".score").textContent = 0;
     }
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      message.textContent = "📉 Too low";
-      score = score - 1;
-      document.querySelector(".score").textContent = score;
-    } else {
-      message.textContent = "💣 You lost the game";
-      document.querySelector(".score").textContent = 0;
-    }
   }
 }
-let checkButton = document.querySelector(".check");
+const checkButton = document.querySelector(".check");
 checkButton.addEventListener("click", checkNumber);
 
 function playAgain() {

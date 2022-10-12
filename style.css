@@ -8,8 +8,9 @@ body {
 }
 header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
+
 button {
   border-radius: 5px;
   padding: 10px 30px;
