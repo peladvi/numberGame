@@ -2,10 +2,10 @@
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let message = document.querySelector(".message");
 
 function checkNumber() {
   const guess = Number(document.querySelector(".guess").value);
-  let message = document.querySelector(".message");
 
   if (!guess) {
     message.textContent = "❌ No number entered!";
@@ -30,10 +30,11 @@ checkButton.addEventListener("click", checkNumber);
 function playAgain() {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector(".message").textContent = "🤯Start guessing...";
+  message.textContent = "🤯Start guessing...";
   document.querySelector("body").style.backgroundColor = "black";
   document.querySelector(".score").textContent = score;
   document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
 }
 document.querySelector(".again").addEventListener("click", playAgain);
 
