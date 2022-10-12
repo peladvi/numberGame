@@ -12,6 +12,7 @@ function checkNumber() {
   } else if (guess === secretNumber) {
     message.textContent = "🎉 Correct number!";
     document.querySelector(".number").textContent = secretNumber;
+    document.querySelector("body").style.backgroundColor = "#acc6aa";
   } else if (guess > secretNumber) {
     if (score > 1) {
       message.textContent = "📈 Too high";
@@ -35,3 +36,5 @@ function checkNumber() {
 
 let checkButton = document.querySelector(".check");
 checkButton.addEventListener("click", checkNumber);
+
+// #acc6aa;
